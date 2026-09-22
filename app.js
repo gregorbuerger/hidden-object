@@ -14,7 +14,7 @@ const sparkLayer=document.querySelector('#spark-layer');
 
 let found=new Set();
 let lives=3;
-let scale=1,tx=0,ty=0;
+let scale=1,tx=0,ty=0,fitScale=1;
 let pointers=new Map();
 let startDist=0,startScale=1,startMid=null,startTransform=null;
 let moved=false;
@@ -38,8 +38,15 @@ function clamp(){
 }
 function apply(){clamp();world.style.transform=`translate(${tx}px,${ty}px) scale(${scale})`}
 function resetView(){
-  scale=1;
-  requestAnimationFrame(()=>{tx=(viewport.clientWidth-world.offsetWidth)/2;ty=0;apply()});
+  requestAnimationFrame(()=>{
+    const vw=viewport.clientWidth, vh=viewport.clientHeight;
+    const ww=world.offsetWidth, wh=world.offsetHeight;
+    fitScale=Math.min(vw/ww, vh/wh);
+    scale=fitScale;
+    tx=(vw-ww*scale)/2;
+    ty=(vh-wh*scale)/2;
+    apply();
+  });
 }
 
 function burst(x,y){
@@ -111,7 +118,7 @@ viewport.addEventListener('pointermove',e=>{
     moved=true;
     const a=[...pointers.values()];
     const d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);
-    const ns=Math.max(1,Math.min(3.5,startScale*d/startDist));
+    const ns=Math.max(fitScale,Math.min(fitScale*3.5,startScale*d/startDist));
     const vr=viewport.getBoundingClientRect();
     const mx=startMid.x-vr.left,my=startMid.y-vr.top;
     tx=mx-(mx-startTransform.tx)*(ns/startScale);
