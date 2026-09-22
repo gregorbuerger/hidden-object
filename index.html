@@ -1,1 +1,42 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#302f68"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><title>Find Hidden Objects</title></head><body><main><header><b>Find Hidden Objects <small>v0.6.1</small></b><span id="lives">❤️ 3</span></header><section id="viewport"><div id="world"><img id="scene" src="scene.png" alt="Wimmelbild" draggable="false"><button class="object" data-id="0"><img src="auto.png" alt=""></button><button class="object" data-id="1"><img src="hut.png" alt=""></button><button class="object" data-id="2"><img src="lupe.png" alt=""></button><button class="object" data-id="3"><img src="schluessel.png" alt=""></button><button class="object" data-id="4"><img src="kompass.png" alt=""></button></div><div id="toast"></div><div id="spark-layer"></div></section><section class="panel"><div class="row"><strong>Finde diese Gegenstände</strong><b id="score">0/5</b></div><div id="targets"></div><div class="controls"><button id="hint">💡<small>Hinweis</small></button><button id="reset">↻<small>Neu</small></button></div></section></main><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#2f2e68">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Find Hidden Objects</title>
+</head>
+<body>
+<main>
+  <header>
+    <b>Find Hidden Objects <small>v0.7</small></b>
+    <span id="lives">❤️ 3</span>
+  </header>
+
+  <section id="viewport" aria-label="Wimmelbild">
+    <div id="world">
+      <img id="scene" src="scene.png" alt="Werkstatt am See" draggable="false">
+      <button class="object" data-id="0" aria-label="Laterne"><img src="laterne.png" alt=""></button>
+      <button class="object" data-id="1" aria-label="Stiefel"><img src="stiefel.png" alt=""></button>
+      <button class="object" data-id="2" aria-label="Schlüssel"><img src="schluessel.png" alt=""></button>
+      <button class="object" data-id="3" aria-label="Fernglas"><img src="fernglas.png" alt=""></button>
+      <button class="object" data-id="4" aria-label="Auto"><img src="auto.png" alt=""></button>
+    </div>
+    <div id="toast"></div>
+    <div id="spark-layer"></div>
+  </section>
+
+  <section class="panel">
+    <div class="row"><strong>Finde diese Gegenstände</strong><b id="score">0/5</b></div>
+    <div id="targets"></div>
+    <div class="controls">
+      <button id="hint">💡<small>Hinweis</small></button>
+      <button id="reset">↻<small>Neu</small></button>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
