@@ -1,9 +1,9 @@
 const items=[
   {img:'laterne.png'},
   {img:'stiefel.png'},
+  {img:'taschenuhr.png'},
   {img:'schluessel.png'},
-  {img:'fernglas.png'},
-  {img:'auto.png'}
+  {img:'fernglas.png'}
 ];
 
 const viewport=document.querySelector('#viewport');
