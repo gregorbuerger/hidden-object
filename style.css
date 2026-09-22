@@ -10,12 +10,13 @@ header small{font-size:10px;opacity:.58}
 #scene{width:100%;height:100%;display:block;object-fit:fill;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .object{position:absolute;z-index:3;border:0;background:transparent;padding:0;margin:0;touch-action:none;transform-origin:center center;filter:drop-shadow(0 2px 2px #0005)}
 .object img{width:100%;height:100%;display:block;object-fit:contain;pointer-events:none}
-/* Suchobjekte: plausible Ablageorte und bewusst gut erkennbare Groessen. */
-.object[data-id="0"]{left:28.5%;top:43.0%;width:4.8%;aspect-ratio:1/1;transform:rotate(-2deg)}
-.object[data-id="1"]{left:66.0%;top:66.0%;width:5.8%;aspect-ratio:1/1;transform:rotate(1deg)}
-.object[data-id="2"]{left:24.0%;top:47.0%;width:4.0%;aspect-ratio:1/1;transform:rotate(-8deg)}
-.object[data-id="3"]{left:8.5%;top:25.0%;width:3.8%;aspect-ratio:1/1;transform:rotate(15deg)}
-.object[data-id="4"]{left:14.0%;top:47.0%;width:6.2%;aspect-ratio:1/1;transform:rotate(-4deg)}
+/* Suchobjekte: reale Groessen und plausible Ablageorte.
+   Schwierigkeit entsteht durch Einbettung in die Szene, nicht durch Miniaturisierung. */
+.object[data-id="0"]{left:28.0%;top:42.0%;width:5.5%;aspect-ratio:1/1;transform:rotate(-2deg)}
+.object[data-id="1"]{left:66.5%;top:61.0%;width:7.5%;aspect-ratio:1/1;transform:rotate(1deg)}
+.object[data-id="2"]{left:23.5%;top:46.0%;width:4.3%;aspect-ratio:1/1;transform:rotate(-5deg)}
+.object[data-id="3"]{left:8.8%;top:24.5%;width:3.6%;aspect-ratio:1/1;transform:rotate(12deg)}
+.object[data-id="4"]{left:13.0%;top:45.5%;width:7.0%;aspect-ratio:1/1;transform:rotate(-3deg)}
 .object.gone{visibility:hidden}
 .object.collecting{opacity:0;pointer-events:none}
 #toast{position:absolute;z-index:8;left:50%;top:8%;transform:translateX(-50%);padding:9px 15px;border-radius:18px;background:#24234ce8;opacity:0;transition:.2s;white-space:nowrap;pointer-events:none;box-shadow:0 4px 18px #0005}
@@ -28,8 +29,8 @@ header small{font-size:10px;opacity:.58}
 .panel{z-index:5;padding:9px 10px calc(8px + env(safe-area-inset-bottom));background:#302f68;box-shadow:0 -5px 18px #1115}
 .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;font-size:14px}
 #targets{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
-.target{position:relative;background:#fff;border-radius:13px;padding:8px;min-width:0;height:76px;display:grid;place-items:center;transition:.2s;overflow:hidden}
-.target img{display:block;width:82%;height:82%;max-width:82%;max-height:82%;object-fit:contain;object-position:center center;margin:auto}
+.target{position:relative;background:#fff;border-radius:13px;padding:6px;min-width:0;height:80px;display:grid;place-items:center;transition:.2s;overflow:hidden}
+.target img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center center;margin:auto}
 .target.done{background:#e8ffe9}
 .target.done img{opacity:.28}
 .check{position:absolute;right:4px;top:4px;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#35b95d;color:#fff;font-weight:900;font-size:15px;box-shadow:0 2px 5px #0004}
